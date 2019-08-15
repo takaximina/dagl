@@ -1,0 +1,33 @@
+{
+  "aly": {
+    "user": "http://192.168.12.57:8190",
+    "FILE":"http://192.168.12.57:8190",
+    "product": "http://120.78.137.30:8091",
+    "order": "http://120.78.137.30:8092",
+    "customer": "http://120.78.137.30:8093",
+    "WORK": "http://120.78.137.30:8094",
+    "BUSINESS": "http://120.78.137.30:8095",
+    "MES": "http://120.78.137.30:8096",
+    "fileUrl": "http://120.78.137.30/res/"
+  },
+  "mysNetwork": {
+    "user": "http://192.168.20.196:8090",
+    "product": "http://192.168.20.196:8091",
+    "order": "http://192.168.20.196:8092",
+    "customer": "http://192.168.20.196:8093",
+    "WORK": "http://192.168.20.196:8094",
+    "BUSINESS": "http://192.168.20.196:8095",
+    "MES": "http://192.168.20.196:8096",
+    "fileUrl": "http://192.168.20.196:8088/res/"
+  },
+  "mys": {
+    "user": "http://www.mingyangshan.com:8090",
+    "product": "http://www.mingyangshan.com:8091",
+    "order": "http://www.mingyangshan.com:8092",
+    "customer": "http://www.mingyangshan.com:8093",
+    "WORK": "http://www.mingyangshan.com:8094",
+    "BUSINESS": "http://www.mingyangshan.com:8095",
+    "MES": "http://www.mingyangshan.com:8096",
+    "fileUrl": "http://www.mingyangshan.com/res/"
+  }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>生产看板</title>
+  <link rel="stylesheet" type="text/css" href="http://unpkg.com/iview/dist/styles/iview.css">
+  <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
+  <script type="text/javascript" src="http://unpkg.com/iview/dist/iview.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <i-table :columns="columns1" :data="data1"></i-table>
+  </div>
+</body>
+<script>
+  const CONFIG = {
+    "user": "http://www.mingyangshan.com:8090",
+    "product": "http://www.mingyangshan.com:8091",
+    "order": "http://www.mingyangshan.com:8092",
+    "customer": "http://www.mingyangshan.com:8093",
+    "WORK": "http://www.mingyangshan.com:8094",
+    "BUSINESS": "http://www.mingyangshan.com:8095",
+    "MES": "http://www.mingyangshan.com:8096"
+  };
+  let app = new Vue({
+    el: '#app',
+    data:{
+      columns1: [
+        {
+          title: '产品名称',
+          key: 'name'
+        },
+        {
+          title: '产品型号',
+          key: 'age'
+        },
+        {
+          title: '当前所在线别',
+          key: 'address'
+        },
+        {
+          title: '当前所在工位',
+          key: 'address'
+        },
+        {
+          title: '工单编码',
+          key: 'address'
+        }
+      ],
+      data1: [
+        {
+          name: 'John Brown',
+          age: 18,
+          address: 'New York No. 1 Lake Park',
+          date: '2016-10-03'
+        },
+        {
+          name: 'Jim Green',
+          age: 24,
+          address: 'London No. 1 Lake Park',
+          date: '2016-10-01'
+        },
+        {
+          name: 'Joe Black',
+          age: 30,
+          address: 'Sydney No. 1 Lake Park',
+          date: '2016-10-02'
+        },
+        {
+          name: 'Jon Snow',
+          age: 26,
+          address: 'Ottawa No. 2 Lake Park',
+          date: '2016-10-04'
+        }
+      ]
+    },
+    mounted(){
+      axios.post( CONFIG.user + '/context/login', {
+        "password": "789123",
+        "username": "admin_dmn"
+      }).then( function ( res ) {
+        console.log( res.data );
+      })
+    },
+  })
+</script>
+</html>

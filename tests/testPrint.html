@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="lodopFuncs.js"></script>
+  <script src="JsBarcode.all.js"></script>
+</head>
+<body>
+<div id="cbx">
+  <canvas style="width: 120px;height: 30px;" id="code"></canvas>
+</div>
+<div></div>
+<button onclick="print()">print</button>
+<button onclick="print1()">print1</button>
+<!--<button onclick="print2()">print2</button>-->
+<script>
+  JsBarcode('#code', '00187DAB08E5', {
+      format: "CODE128",//选择要使用的条形码类型
+      //width:2,//设置条之间的宽度
+      //height:25,//高度
+      //displayValue:true,//是否在条形码下方显示文字
+      text:"MAC1 00187DAB08E5",//覆盖显示的文本
+      //fontOptions:"bold italic",//使文字加粗体或变斜体
+      //font:"fantasy",//设置文本的字体
+      //textAlign:"left",//设置文本的水平对齐方式
+      //textPosition:"top",//设置文本的垂直位置
+      //textMargin:0,//设置条形码和文本之间的间距
+      //fontSize:12,//设置文本的大小
+      //background:"#fff",//设置条形码的背景
+      //lineColor:"#2196f3",//设置条和文本的颜色。
+      margin:2//设置条形码周围的空白边距
+  });
+  function print() {
+    let LODOP = getLodop();
+    // LODOP.PRINT_INITA(0,0, '45mm', '12mm', "条码打印");
+    LODOP.PRINT_INITA("0mm","0mm","72mm","10mm","条码打印");
+    LODOP.SET_PRINT_PAGESIZE(0, '72mm', '10mm' );
+    LODOP.NewPage();
+    LODOP.ADD_PRINT_BARCODE("2mm","6mm","25mm","5mm","128A","00187DAB08E5");
+    LODOP.SET_PRINT_STYLEA(0,"ShowBarText",0);
+    LODOP.ADD_PRINT_TEXT("7mm","6mm","23mm","3mm","MAC1 00187DAB08E5");
+    LODOP.SET_PRINT_STYLEA(0,"FontSize",6);
+
+    LODOP.ADD_PRINT_BARCODE("2mm","43mm","25mm","5mm","128A","00187DAB0815");
+    LODOP.SET_PRINT_STYLEA(0,"ShowBarText",0);
+    LODOP.ADD_PRINT_TEXT("7mm","43mm","23mm","3mm","MAC1 00187DAB0815");
+    LODOP.SET_PRINT_STYLEA(0,"FontSize",6);
+    // LODOP.ADD_PRINT_BARCODE('0.5mm', '0.5mm', '44mm', '10mm' ,'128A','19AP1103000050001');
+    LODOP.PREVIEW();
+    // LODOP.PRINT();
+  }
+  function print1() {
+    let LODOP = getLodop();
+    // LODOP.PRINT_INITA(0,0, '45mm', '12mm', "条码打印");
+    // LODOP.PRINT_INITA("0mm","0mm","92mm","12mm","条码打印");
+    LODOP.SET_PRINT_PAGESIZE(0, '92mm', '12mm' );
+    LODOP.NewPage();
+    LODOP.ADD_PRINT_BARCODE('1mm','9mm','30mm',"8mm","128A","A19FEE7890123456E");
+    LODOP.SET_PRINT_STYLEA(0,"FontSize",6);
+    LODOP.ADD_PRINT_BARCODE('1mm','56mm','30mm',"8mm","128A","A19F567890123456E");
+    LODOP.SET_PRINT_STYLEA(0,"FontSize",6);
+    // LODOP.ADD_PRINT_BARCODE('0.5mm', '0.5mm', '44mm', '10mm' ,'128A','19AP1103000050001');
+    // LODOP.PRINT();
+    LODOP.PREVIEW();
+  }
+  function print2() {
+    let str = document.getElementById('cbx').innerHTML;
+    debugger;
+    let LODOP = getLodop();
+    LODOP.PRINT_INITA("0mm","0mm","92mm","12mm","条码打印");
+    LODOP.SET_PRINT_PAGESIZE(0, '92mm', '12mm' );
+    LODOP.NewPage();
+    LODOP.ADD_PRINT_HTM(0,0 ,'92mm', '12mm', str);
+    LODOP.PREVIEW();
+  }
+</script>
+</body>
+</html>

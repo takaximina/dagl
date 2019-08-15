@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title>云研发平台</title>
+    <style id="printStyle">
+      .print-box *{
+        box-sizing: border-box;
+        font-size: 12px;
+      }
+      .clear-fix:after,.clear-fix:before{
+        content: '';
+        display: table;
+        clear: both;
+        box-sizing: border-box;
+        font-size: 12px;
+      }
+      .print-box{
+        padding: 15px 0;
+      }
+      .print-main{
+        width: 690px;
+        background: #fff;
+      }
+      .print-item-row{
+        float: left;
+        line-height: 25px;
+        box-sizing: border-box;
+        font-size: 12px;
+        overflow: hidden;
+      }
+      .print-item-footer .print-item-row{
+        width: 33.33%;
+        text-align: left;
+      }
+
+      .print-table-head{
+        border-bottom: 2px solid #111;
+        border-top: 2px solid #111;
+        font-weight: bold;
+        height: 30px;
+        box-sizing: border-box;
+        font-size: 12px;
+      }
+      .print-table-body{
+        border-bottom: 1px solid #111;
+        height: 35px;
+        box-sizing: border-box;
+        font-size: 12px;
+      }
+      .print-table-td{
+        display: table-cell;
+        vertical-align: middle;
+        line-height: 14px;
+      }
+      .print-table-head .print-table-td{
+        height: 28px;
+      }
+      .print-table-body .print-table-td{
+        height: 35px;
+        font-size: 12px;
+      }
+      .print-table-td:first-child{
+        width: 30px;
+        text-align: center;
+      }
+      .print-table-td:nth-child(2){
+        /*width: 90px;*/
+        width: 150px;
+        text-align: left;
+      }
+      .print-table-td:nth-child(3){
+        /*width: 90px;*/
+        width: 180px;
+        text-align: left;
+      }
+      .print-table-td:nth-child(4){
+        width: 240px;
+        text-align: left;
+      }
+      .print-table-td:nth-child(5){
+        width: 90px;
+        text-align: right;
+      }
+      /*.print-table-td:nth-child(6){
+        width: 60px;
+        text-align: right;
+      }
+      .print-table-td:nth-child(7){
+        width: 90px;
+        text-align: right;
+      }*/
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but iview-admin doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
